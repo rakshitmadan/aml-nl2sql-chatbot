@@ -1,0 +1,20 @@
+# --- Phase 1: synthetic database ---
+sqlalchemy>=2.0       # Python ORM/toolkit — lets us define DB tables as Python classes
+faker>=24.0            # generates realistic fake names, addresses, dates, etc.
+pandas>=2.0             # used by the AML policy engine to analyze query results
+
+# --- Phase 2-3: NL -> SQL + LangGraph ---
+langgraph>=0.2          # the state-machine/orchestration framework for the chatbot
+langchain-core>=0.3      # shared LangChain abstractions LangGraph nodes use
+python-dotenv>=1.0        # loads API keys from a local .env file instead of hardcoding them
+sqlglot>=25.0               # parses/validates SQL (used by the guardrail node)
+
+# LLM provider — decided: Anthropic (Claude)
+langchain-anthropic>=0.3
+anthropic>=0.40
+
+# --- Phase 5: schema retrieval (RAG) ---
+chromadb>=0.5             # simple local vector store for embedding table/column descriptions
+
+# --- Phase 7: front end ---
+streamlit>=1.38            # minimal chat UI
